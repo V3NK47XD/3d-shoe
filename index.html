@@ -155,7 +155,7 @@ scene.add(bounce);
 
   // ── Load your model here ──────────────────────────────────────────────────
   new THREE.GLTFLoader().load(
-    'https://storage.filebin.net/filebin/dea3141a66aeafd7bfe5155904dbb3cd907675a8c894cf22d286cdbcf54bc4a5?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=GK352fd2505074fc9dde7fd2cb%2F20260310%2Fhel1-dc4%2Fs3%2Faws4_request&X-Amz-Date=20260310T175428Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D900&response-content-disposition=inline%3B%20filename%3D%22boot.glb%22&response-content-type=model%2Fgltf-binary&x-id=GetObject&X-Amz-Signature=6f81e65ff5fd68d94134cea7eaab0d4319e396b3700834c287c3c8e3d147df83',   // 👈 replace with your file path, e.g. 'models/nike_air.glb'
+    'https://github.com/V3NK47XD/3d-shoe/raw/refs/heads/main/boot.glb',   // 👈 replace with your file path, e.g. 'models/nike_air.glb'
     gltf => {
       const model = gltf.scene;
       // auto-center & scale
