@@ -122,11 +122,29 @@
   const camera = new THREE.PerspectiveCamera(40, 1, 0.01, 100);
   camera.position.set(0, 0.5, 3);
 
-  scene.add(new THREE.AmbientLight(0xfff5e0, 0.7));
-  const key = new THREE.DirectionalLight(0xffffff, 1.8);
-  key.position.set(3, 4, 3); key.castShadow = true; scene.add(key);
-  const fill = new THREE.DirectionalLight(0xd0e8ff, 0.5);
-  fill.position.set(-3, 1, -2); scene.add(fill);
+// softer ambient base
+scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+
+// main product light (top front)
+const key = new THREE.DirectionalLight(0xffffff, 2.5);
+key.position.set(4, 5, 4);
+key.castShadow = true;
+scene.add(key);
+
+// soft fill light (front)
+const fill = new THREE.DirectionalLight(0xfff1e6, 2);
+fill.position.set(-4, 2, 3);
+scene.add(fill);
+
+// rim light (edge highlight)
+const rim = new THREE.DirectionalLight(0xffffff, 1.5);
+rim.position.set(0, 3, -4);
+scene.add(rim);
+
+// subtle bottom bounce
+const bounce = new THREE.DirectionalLight(0xd0e8ff, 2);
+bounce.position.set(0, -3, 2);
+scene.add(bounce);
 
   const controls = new THREE.OrbitControls(camera, canvas);
   controls.enableDamping  = true;
